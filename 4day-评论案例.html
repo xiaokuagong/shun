@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../Ajax/jquery-3.6.0.min.js"></script>
+    <script src="../Ajax/cmt.js"></script>
+    <style>
+        .pinglun{
+            margin:20px auto;
+            width: 1000px;
+            height: 300px;
+            border: 1px solid black;
+        }
+        h4{
+            height: 40px;
+            background-color: blue;
+        }
+        input{
+            width: 900px;
+            height: 30px;
+            margin-left: 50px;
+        }
+        textarea{
+            width: 900px;
+            height: 50px;
+            margin-left: 50px;
+        }
+        .btn{
+            margin-left: 50px;
+            width: 70px;
+            height: 25px;
+            background-color: blue;
+            color: aliceblue;
+        }
+        span{
+            margin-left: 50px;
+        }
+        li{
+            margin: 50px auto;
+            width: 1000px;
+            height: 100px;
+        }
+        .badge{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="pinglun">
+        <h4>发表评论</h4>
+        <span>评论人:</span><input type="text">
+        <span>评论内容</span><textarea name="" id="" cols="30" rows="10"></textarea>
+        <button class="btn">发表评论</button>
+    </div>
+    <ul>
+        <li id="cmt-list"><span class="badge">评论时间:</span><span class="badge">评论人:</span></li>
+    </ul>
+</body>
+</html>

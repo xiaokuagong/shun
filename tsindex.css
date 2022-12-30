@@ -1,0 +1,66 @@
+.head{
+    width: 800px;
+    height: 100px;
+    border: 1px solid blue;
+    margin: 20px auto;
+}
+.newbook{
+    width: 800px;
+    height: 30px;
+    background-color: blue;
+    color: aliceblue;
+    font-size: 14px;
+}
+.bname{
+    float: left;
+    width:50px;
+    height: 30px;
+    background-color: darkgray;
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: center;
+    line-height: 30px;
+}
+.name{
+    float: left;
+    width:50px;
+    height: 30px;
+    background-color: darkgray;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 30px;
+}
+.cbs{
+    float: left;
+    width:50px;
+    height: 30px;
+    background-color: darkgray;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 30px;
+}
+.add{
+    float: left;
+    width: 50px;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 10px;  
+}
+input{
+    float: left;
+    width: 180px;
+    height: 30px;
+    margin-top: 20px;
+}
+table{
+    margin: 30px auto;
+    width: 800px;
+    height: 200px;
+    border: 1px solid black;
+}
+th{
+    border: 1px solid black;
+}
+td{
+    border: 1px solid black;
+}

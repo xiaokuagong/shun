@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <!-- 选择文件追加到form表单里 -->
+    <input type="file" id="file1">
+    <button id="btnupload">上传文件</button>
+    <br>
+    <img src="" alt="" id="img" width="40px">
+    <script>
+        var btnupload = document.querySelector('#btnupload')
+        btnupload.addEventListener('click',function(){
+            // 获取到用户选泽的文件列表
+            var files = document.querySelector('#file1').files
+            if(files.length <= 0){
+                return window.alert('请选泽文件')
+            }
+            console.log('上传传文件')
+            var fd = new FormData()
+            // 向formdata，中追加文件
+            fd.append('avatar',files[0])
+            // 将文件传入服务器
+            var xhr = new XMLHttpRequest()
+            // 通过onprogress监听文件上传的进度
+            xhr.upload.onprogress = function(e){
+                // 判断是否可以计算上传的进度
+                if(e.lengthComputable){
+                    // Math函数去整数
+                    // 需要上传的总量除以上传的进度*100把小数变个数
+                    var procentcomplet = Math.ceil((e.loaded/e.total)*100)
+                    console.log(procentcomplet)
+                }
+
+            }
+            xhr.open('post','http://www.liulongbin.top:3006/api/upload/avatar')
+            xhr.send(fd)
+            // 监听事件
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState === 4 && xhr.status){
+                    var res = JSON.parse(xhr.responseText)
+                    if(res.status === 200){
+                        // 将服务器返回的图片地址 设置为img标签的src
+                        document.querySelector('#img').src = 'http://www.liulongbin.top:3006' + res.url
+                    }else{
+                        // 上传失败
+                        console.log(res.message)
+                    }
+                }
+            }
+        })
+        
+    </script>
+</body>
+</html>

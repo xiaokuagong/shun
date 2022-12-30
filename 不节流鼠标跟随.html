@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <style>
+        img{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/logo.png" alt="" id="imgs">
+    <script>
+       $(function(){
+        //    获取图片
+           var imgs = $('#imgs')
+        // 绑定mousemove事件
+        $(document).on('mousemove',function(e){
+            // 设置图片位置
+            $(imgs).css('top',e.pageY + 'px').css('left',e.pageX + 'px')
+        })
+       })
+    </script>
+</body>
+</html>
